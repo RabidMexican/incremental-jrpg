@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://caxyfc8mmg4dq"]
+[gd_scene load_steps=3 format=3 uid="uid://caxyfc8mmg4dq"]
+
+[ext_resource type="PackedScene" uid="uid://c4kbfxq0h5fc6" path="res://ui/ui_panel.tscn" id="1_7gynk"]
+[ext_resource type="PackedScene" uid="uid://baq5ajmg7x88e" path="res://ui/ui_button.tscn" id="2_ffvsa"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -7,6 +10,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="UI" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 1.00636)
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 2
+
+[node name="Panel" parent="UI/PanelContainer" instance=ExtResource("1_7gynk")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel2" parent="UI/PanelContainer" instance=ExtResource("1_7gynk")]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -1
@@ -18,3 +47,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
+
+[node name="CommandPanel" parent="." instance=ExtResource("1_7gynk")]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 99.0
+offset_right = 137.0
+offset_bottom = 165.0
+
+[node name="CommandContainer" type="VBoxContainer" parent="CommandPanel"]
+layout_mode = 2
+
+[node name="AttackButton" parent="CommandPanel/CommandContainer" instance=ExtResource("2_ffvsa")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "attack"
+
+[node name="AbilitiesButton" parent="CommandPanel/CommandContainer" instance=ExtResource("2_ffvsa")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "abilities"
+
+[node name="ItemButton" parent="CommandPanel/CommandContainer" instance=ExtResource("2_ffvsa")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "item"
