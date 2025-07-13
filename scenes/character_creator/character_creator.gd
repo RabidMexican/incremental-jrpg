@@ -33,7 +33,7 @@ func _on_body_previous_button_pressed() -> void:
 	var body_key = body_keys[current_body_index]
 	
 	if Global.body_collection.has(body_key):
-		character.set_body(Global.body_collection[body_key])
+		character.set_body_texture(Global.body_collection[body_key])
 		_update_selected_body_label(body_key)
 
 
@@ -46,7 +46,7 @@ func _on_body_next_button_pressed() -> void:
 	var body_key = body_keys[current_body_index]
 		
 	if Global.body_collection.has(body_key):
-		character.set_body(Global.body_collection[body_key])
+		character.set_body_texture(Global.body_collection[body_key])
 		_update_selected_body_label(body_key)
 		
 		
@@ -59,7 +59,7 @@ func _on_eyes_previous_button_pressed() -> void:
 	var eyes_key = eyes_keys[current_eyes_index]
 	
 	if Global.eyes_collection.has(eyes_key):
-		character.set_eyes(Global.eyes_collection[eyes_key])
+		character.set_eyes_texture(Global.eyes_collection[eyes_key])
 		_update_selected_eyes_label(eyes_key)
 
 
@@ -72,7 +72,7 @@ func _on_eyes_next_button_pressed() -> void:
 	var eyes_key = eyes_keys[current_eyes_index]
 		
 	if Global.eyes_collection.has(eyes_key):
-		character.set_eyes(Global.eyes_collection[eyes_key])
+		character.set_eyes_texture(Global.eyes_collection[eyes_key])
 		_update_selected_eyes_label(eyes_key)
 		
 		
@@ -85,7 +85,7 @@ func _on_arms_previous_button_pressed() -> void:
 	var arms_key = arms_keys[current_arms_index]
 	
 	if Global.arms_collection.has(arms_key):
-		character.set_arms(Global.arms_collection[arms_key])
+		character.set_arms_texture(Global.arms_collection[arms_key])
 		_update_selected_arms_label(arms_key)
 
 
@@ -98,7 +98,7 @@ func _on_arms_next_button_pressed() -> void:
 	var arms_key = arms_keys[current_arms_index]
 		
 	if Global.arms_collection.has(arms_key):
-		character.set_arms(Global.arms_collection[arms_key])
+		character.set_arms_texture(Global.arms_collection[arms_key])
 		_update_selected_arms_label(arms_key)
 		
 		
@@ -111,7 +111,7 @@ func _on_legs_previous_button_pressed() -> void:
 	var legs_key = legs_keys[current_legs_index]
 	
 	if Global.legs_collection.has(legs_key):
-		character.set_legs(Global.legs_collection[legs_key])
+		character.set_legs_texture(Global.legs_collection[legs_key])
 		_update_selected_legs_label(legs_key)
 
 
@@ -124,7 +124,7 @@ func _on_legs_next_button_pressed() -> void:
 	var legs_key = legs_keys[current_legs_index]
 		
 	if Global.legs_collection.has(legs_key):
-		character.set_legs(Global.legs_collection[legs_key])
+		character.set_legs_texture(Global.legs_collection[legs_key])
 		_update_selected_legs_label(legs_key)
 		
 		
@@ -171,10 +171,10 @@ func _on_randomize_button_pressed() -> void:
 	var color_key: String = color_keys[current_color_index]
 	
 	# update character
-	character.set_body(Global.body_collection[body_key])
-	character.set_eyes(Global.eyes_collection[eyes_key])
-	character.set_arms(Global.arms_collection[arms_key])
-	character.set_legs(Global.legs_collection[legs_key])
+	character.set_body_texture(Global.body_collection[body_key])
+	character.set_eyes_texture(Global.eyes_collection[eyes_key])
+	character.set_arms_texture(Global.arms_collection[arms_key])
+	character.set_legs_texture(Global.legs_collection[legs_key])
 	character.set_color(Global.body_colors[color_key])
 	
 	# update ui
@@ -182,7 +182,7 @@ func _on_randomize_button_pressed() -> void:
 	_update_selected_eyes_label(eyes_key)
 	_update_selected_arms_label(arms_key)
 	_update_selected_legs_label(legs_key)
-	_update_selected_color_ui(color_key, character.color)
+	_update_selected_color_ui(color_key, character.body_color.color)
 	
 	# handle name
 	var random_name: String = Global.random_names[

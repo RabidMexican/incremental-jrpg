@@ -14,10 +14,6 @@ height = 8.0
 script = ExtResource("1_8afob")
 show_name = true
 character_name = "name"
-body = ExtResource("4_75vfm")
-eyes = ExtResource("2_p47bc")
-arms = ExtResource("3_p47bc")
-legs = ExtResource("2_lvxji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 255

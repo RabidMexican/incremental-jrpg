@@ -6,43 +6,40 @@ class_name Character
 @export var show_name: bool = false
 @export var speed: int = 50
 @export var character_name: String = Global.random_names[0]
-@export var color: Color = Global.body_colors["Normal"]
-@export var body: Texture2D = Global.body_collection["01"]
-@export var eyes: Texture2D = Global.eyes_collection["01"]
-@export var arms: Texture2D = Global.arms_collection["01"]
-@export var legs: Texture2D = Global.legs_collection["01"]
+
+@onready var body: Sprite2D = $Skeleton/Body/BodyTexture
+@onready var body_color: ColorRect = $Skeleton/Body/ColorRect
+@onready var eyes: Sprite2D = $Skeleton/Eyes
+@onready var arms: Sprite2D = $Skeleton/Arms
+@onready var legs: Sprite2D = $Skeleton/Legs
+@onready var name_tag: Label = $Skeleton/Label
 
 var last_direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	if show_name:
-		$Skeleton/Label.visible = true
+		name_tag.visible = true
 	else:
 		$Skeleton/Label.visible = false
 
-func set_body(new_body: Texture2D) -> void:
-	body = new_body
-	$Skeleton/Body/BodyTexture.texture = new_body
+func set_body_texture(new_texture: Texture2D) -> void:
+	body.texture = new_texture
 	
 	
-func set_eyes(new_eyes: Texture2D) -> void:
-	eyes = new_eyes
-	$Skeleton/Eyes.texture = new_eyes
+func set_eyes_texture(new_texure: Texture2D) -> void:
+	eyes.texture = new_texure
 	
 	
-func set_arms(new_arms: Texture2D) -> void:
-	arms = new_arms
-	$Skeleton/Arms.texture = new_arms
+func set_arms_texture(new_texure: Texture2D) -> void:
+	arms.texture = new_texure
 	
 	
-func set_legs(new_legs: Texture2D) -> void:
-	legs = new_legs
-	$Skeleton/Legs.texture = new_legs
+func set_legs_texture(new_texure: Texture2D) -> void:
+	legs.texture = new_texure
 	
 	
 func set_color(new_color: Color) -> void:
-	color = new_color
-	$Skeleton/Body/ColorRect.color = new_color
+	body_color.color = new_color
 
 
 func set_character_name(new_name: String) -> void:
