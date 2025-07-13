@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://blw8yjho7b7oq"]
+
+[ext_resource type="Texture2D" uid="uid://tn0k74heiipl" path="res://assets/panel_background.png" id="1_4a83h"]
+
+[node name="Enemy" type="TextureButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_4a83h")

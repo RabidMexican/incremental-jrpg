@@ -20,10 +20,6 @@ z_index = 255
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_0owmy")
 
-[node name="Camera" type="Camera2D" parent="."]
-enabled = false
-zoom = Vector2(3, 3)
-
 [node name="Skeleton" type="Node2D" parent="."]
 
 [node name="Eyes" type="Sprite2D" parent="Skeleton"]

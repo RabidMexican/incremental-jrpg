@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://igu5i75fvbxr"]
+
+[ext_resource type="PackedScene" uid="uid://didaov3rjfn4e" path="res://scenes/character/character.tscn" id="1_7552b"]
+
+[node name="BattleCharacter" type="TextureButton"]
+
+[node name="Character" parent="." instance=ExtResource("1_7552b")]
+position = Vector2(8, 6)
+scale = Vector2(2, 2)

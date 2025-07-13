@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://caxyfc8mmg4dq"]
+[gd_scene load_steps=5 format=3 uid="uid://caxyfc8mmg4dq"]
 
 [ext_resource type="PackedScene" uid="uid://c4kbfxq0h5fc6" path="res://ui/ui_panel.tscn" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://baq5ajmg7x88e" path="res://ui/ui_button.tscn" id="2_ffvsa"]
+[ext_resource type="PackedScene" uid="uid://igu5i75fvbxr" path="res://scenes/battle/character/battle_character.tscn" id="3_0yh6x"]
+[ext_resource type="PackedScene" uid="uid://blw8yjho7b7oq" path="res://scenes/enemy/enemy.tscn" id="3_pll4o"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -12,13 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="UI" type="MarginContainer" parent="."]
+z_index = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -10.0
+offset_top = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1, 1.00636)
@@ -37,18 +40,9 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Background" type="ColorRect" parent="."]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
-
 [node name="CommandPanel" parent="." instance=ExtResource("1_7gynk")]
+visible = false
+z_index = 2
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 0
 offset_left = 17.0
@@ -57,9 +51,11 @@ offset_right = 137.0
 offset_bottom = 165.0
 
 [node name="CommandContainer" type="VBoxContainer" parent="CommandPanel"]
+z_index = 1
 layout_mode = 2
 
 [node name="AttackButton" parent="CommandPanel/CommandContainer" instance=ExtResource("2_ffvsa")]
+z_index = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "attack"
@@ -73,3 +69,72 @@ text = "abilities"
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "item"
+
+[node name="Players" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleCharacter" parent="Players" instance=ExtResource("3_0yh6x")]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 35.0
+offset_right = 94.0
+offset_bottom = 35.0
+
+[node name="BattleCharacter2" parent="Players" instance=ExtResource("3_0yh6x")]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 65.0
+offset_right = 65.0
+offset_bottom = 65.0
+
+[node name="BattleCharacter3" parent="Players" instance=ExtResource("3_0yh6x")]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 97.0
+offset_right = 41.0
+offset_bottom = 97.0
+
+[node name="Enemies" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("3_pll4o")]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 31.0
+offset_right = 226.0
+offset_bottom = 39.0
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("3_pll4o")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 65.0
+offset_right = 244.0
+offset_bottom = 73.0
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("3_pll4o")]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 98.0
+offset_right = 263.0
+offset_bottom = 106.0
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
