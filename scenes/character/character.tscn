@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://didaov3rjfn4e"]
+
+[ext_resource type="Script" uid="uid://bm45l12dm6oys" path="res://scenes/character/character.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://ck3wa1jfvo2vl" path="res://assets/character/legs/legs_1.png" id="2_lvxji"]
+[ext_resource type="Texture2D" uid="uid://damko43d1hchm" path="res://assets/character/eyes/eyes_1.png" id="2_p47bc"]
+[ext_resource type="Texture2D" uid="uid://geu7l5en163x" path="res://assets/character/arms/arms_1.png" id="3_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cl1nvancms4yr" path="res://assets/character/body/body_1.png" id="4_75vfm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0owmy"]
+radius = 3.0
+height = 8.0
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_8afob")
+show_name = true
+character_name = "name"
+body = ExtResource("4_75vfm")
+eyes = ExtResource("2_p47bc")
+arms = ExtResource("3_p47bc")
+legs = ExtResource("2_lvxji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 255
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_0owmy")
+
+[node name="Camera" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(3, 3)
+
+[node name="Skeleton" type="Node2D" parent="."]
+
+[node name="Eyes" type="Sprite2D" parent="Skeleton"]
+z_index = 1
+position = Vector2(0, -1)
+texture = ExtResource("2_p47bc")
+metadata/_edit_lock_ = true
+
+[node name="Legs" type="Sprite2D" parent="Skeleton"]
+z_index = 1
+position = Vector2(0, 4)
+texture = ExtResource("2_lvxji")
+metadata/_edit_lock_ = true
+
+[node name="Arms" type="Sprite2D" parent="Skeleton"]
+z_index = 1
+position = Vector2(0, 2)
+texture = ExtResource("3_p47bc")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Skeleton"]
+visible = false
+z_index = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 70.0
+offset_bottom = 14.3333
+grow_horizontal = 0
+scale = Vector2(0.175, 0.193)
+text = "Name"
+metadata/_edit_lock_ = true
+
+[node name="Body" type="CanvasGroup" parent="Skeleton"]
+metadata/_edit_lock_ = true
+
+[node name="BodyTexture" type="Sprite2D" parent="Skeleton/Body"]
+z_index = 1
+position = Vector2(4.76837e-07, -2.84217e-14)
+texture = ExtResource("4_75vfm")
+
+[node name="ColorRect" type="ColorRect" parent="Skeleton/Body"]
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 37.0
+offset_bottom = 38.0
+scale = Vector2(0.15, 0.109999)
+color = Color(0, 0, 0, 1)

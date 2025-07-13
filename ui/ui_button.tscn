@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://baq5ajmg7x88e"]
+
+[ext_resource type="Theme" uid="uid://bwevipdffyfmu" path="res://themes/default_theme.tres" id="1_3tkkc"]
+
+[node name="Button" type="Button"]
+size_flags_vertical = 0
+theme = ExtResource("1_3tkkc")
+text = "Action"
+alignment = 0

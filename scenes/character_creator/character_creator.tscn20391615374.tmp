@@ -1,0 +1,240 @@
+[gd_scene load_steps=6 format=3 uid="uid://cum7401711qo3"]
+
+[ext_resource type="Script" uid="uid://scdwthpkxt57" path="res://scenes/character_creator/character_creator.gd" id="1_24lvq"]
+[ext_resource type="PackedScene" uid="uid://didaov3rjfn4e" path="res://scenes/character/character.tscn" id="2_7bnd1"]
+[ext_resource type="PackedScene" uid="uid://c4kbfxq0h5fc6" path="res://ui/ui_panel.tscn" id="3_7bnd1"]
+[ext_resource type="Theme" uid="uid://bwevipdffyfmu" path="res://themes/default_theme.tres" id="4_bj6vp"]
+[ext_resource type="PackedScene" uid="uid://baq5ajmg7x88e" path="res://ui/ui_button.tscn" id="5_uq5va"]
+
+[node name="CharacterCreator" type="Node2D"]
+script = ExtResource("1_24lvq")
+
+[node name="Character" parent="." instance=ExtResource("2_7bnd1")]
+position = Vector2(160, 65)
+scale = Vector2(7.2, 7.2)
+script = null
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(8, 4.48)
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="BodyPanel" parent="." instance=ExtResource("3_7bnd1")]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 68.0
+offset_bottom = 44.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BodyPanel"]
+layout_mode = 2
+
+[node name="BodyLabel" type="Label" parent="BodyPanel/VBoxContainer"]
+layout_mode = 2
+text = "Body"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BodyPreviousButton" parent="BodyPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+alignment = 1
+
+[node name="BodyNameLabel" type="Label" parent="BodyPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "01"
+
+[node name="BodyNextButton" parent="BodyPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">
+"
+alignment = 1
+
+[node name="EyesPanel" parent="." instance=ExtResource("3_7bnd1")]
+offset_left = 10.0
+offset_top = 57.0
+offset_right = 68.0
+offset_bottom = 93.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EyesPanel"]
+layout_mode = 2
+
+[node name="EyesLabel" type="Label" parent="EyesPanel/VBoxContainer"]
+layout_mode = 2
+text = "Eyes"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EyesPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="EyesPreviousButton" parent="EyesPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+alignment = 1
+
+[node name="EyesNameLabel" type="Label" parent="EyesPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "01"
+
+[node name="EyesNextButton" parent="EyesPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">
+"
+alignment = 1
+
+[node name="ColorPanel" parent="." instance=ExtResource("3_7bnd1")]
+offset_left = 10.0
+offset_top = 107.0
+offset_right = 80.0
+offset_bottom = 169.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorPanel"]
+layout_mode = 2
+
+[node name="ColorLabel" type="Label" parent="ColorPanel/VBoxContainer"]
+layout_mode = 2
+text = "Color"
+horizontal_alignment = 1
+
+[node name="ColorSelectedLabel" type="Label" parent="ColorPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="LegsPreviousButton" parent="ColorPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+text = "<"
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LegsNextButton" parent="ColorPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_vertical = 4
+text = ">
+"
+alignment = 1
+
+[node name="ArmsPanel" parent="." instance=ExtResource("3_7bnd1")]
+offset_left = 251.0
+offset_top = 7.0
+offset_right = 309.0
+offset_bottom = 43.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArmsPanel"]
+layout_mode = 2
+
+[node name="ArmsLabel" type="Label" parent="ArmsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Arms"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ArmsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BodyPreviousButton" parent="ArmsPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+alignment = 1
+
+[node name="BodyNameLabel" type="Label" parent="ArmsPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "01"
+
+[node name="BodyNextButton" parent="ArmsPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">
+"
+alignment = 1
+
+[node name="LegsPanel" parent="." instance=ExtResource("3_7bnd1")]
+offset_left = 252.0
+offset_top = 55.0
+offset_right = 310.0
+offset_bottom = 91.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LegsPanel"]
+layout_mode = 2
+
+[node name="LegsLabel" type="Label" parent="LegsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Legs"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LegsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="LegsPreviousButton" parent="LegsPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+alignment = 1
+
+[node name="LegsNameLabel" type="Label" parent="LegsPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "01"
+
+[node name="LegsNextButton" parent="LegsPanel/VBoxContainer/HBoxContainer" instance=ExtResource("5_uq5va")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">
+"
+alignment = 1
+
+[node name="NamePanel" parent="." instance=ExtResource("3_7bnd1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 93.0
+offset_top = 133.0
+offset_right = 305.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NamePanel"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NamePanel/HBoxContainer"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+
+[node name="NameInput" type="TextEdit" parent="NamePanel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme = ExtResource("4_bj6vp")
+theme_override_font_sizes/font_size = 8
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[connection signal="pressed" from="BodyPanel/VBoxContainer/HBoxContainer/BodyPreviousButton" to="." method="_on_body_previous_button_pressed"]
+[connection signal="pressed" from="BodyPanel/VBoxContainer/HBoxContainer/BodyNextButton" to="." method="_on_body_next_button_pressed"]

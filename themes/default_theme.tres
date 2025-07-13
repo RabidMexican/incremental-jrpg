@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bwevipdffyfmu"]
+
+[ext_resource type="FontVariation" uid="uid://dfhyiwbnvfmbx" path="res://themes/default_font.tres" id="1_mlkpy"]
+[ext_resource type="Texture2D" uid="uid://tn0k74heiipl" path="res://assets/panel_background.png" id="2_het5a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkf7m"]
+texture = ExtResource("2_het5a")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("1_mlkpy")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 10
+Label/fonts/font = ExtResource("1_mlkpy")
+LineEdit/font_sizes/font_size = 10
+LineEdit/fonts/font = ExtResource("1_mlkpy")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_lkf7m")
+TextEdit/fonts/font = ExtResource("1_mlkpy")

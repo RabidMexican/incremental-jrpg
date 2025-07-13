@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dfhyiwbnvfmbx"]
+
+[ext_resource type="FontFile" uid="uid://c37n4j0x8i20t" path="res://assets/pixel_font.otf" id="1_gp0bv"]
+
+[resource]
+base_font = ExtResource("1_gp0bv")
