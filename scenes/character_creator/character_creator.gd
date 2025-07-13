@@ -235,4 +235,17 @@ func _clean_character_name(text: String) -> String:
 
 
 func _on_create_button_pressed() -> void:
-	pass # Replace with function body.
+	var tree: SceneTree = get_tree()
+	var world_scene = preload("res://scenes/world/world.tscn").instantiate()
+	var current_scene = tree.get_current_scene()
+	
+	character.get_parent().remove_child(character)
+	character.movable = true
+	character.show_name = true
+	world_scene.player = character
+	
+	# manage next scene
+	tree.get_root().add_child(world_scene)
+	tree.get_root().remove_child(current_scene)
+	tree.set_current_scene(world_scene)
+	

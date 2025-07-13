@@ -1,5 +1,7 @@
 extends Node
 
+var player: Character = null
+
 # all body textures
 var body_collection: Dictionary = {
 	"01": preload("res://assets/character/body/body_1.png"),
