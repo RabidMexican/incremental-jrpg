@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Character
 
-
 @export var movable: bool = false
 @export var show_name: bool = false
 @export var speed: int = 50
@@ -16,11 +15,12 @@ class_name Character
 
 var last_direction: Vector2 = Vector2.ZERO
 
+
 func _ready() -> void:
 	if show_name:
 		name_tag.visible = true
 	else:
-		$Skeleton/Label.visible = false
+		name_tag.visible = false
 
 func set_body_texture(new_texture: Texture2D) -> void:
 	body.texture = new_texture
@@ -44,7 +44,7 @@ func set_color(new_color: Color) -> void:
 
 func set_character_name(new_name: String) -> void:
 	character_name = new_name
-	$Skeleton/Label.text = new_name
+	name_tag.text = new_name
 	
 	
 func _physics_process(delta: float) -> void:
