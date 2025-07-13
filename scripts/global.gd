@@ -36,7 +36,7 @@ var legs_collection: Dictionary = {
 var body_colors: Dictionary = {
 	"Normal":  Color.BLACK,
 	"Modern":  Color.DIM_GRAY,
-	"Sleak":   Color.LIGHT_SLATE_GRAY,
+	"Sleek":   Color.LIGHT_SLATE_GRAY,
 	"Chique":  Color.DARK_SLATE_GRAY,
 }
 
