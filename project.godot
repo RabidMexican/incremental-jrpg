@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Mobile")
 [autoload]
 
 Global="*res://scripts/global.gd"
+Debug="*res://scripts/debug.gd"
 
 [display]
 
